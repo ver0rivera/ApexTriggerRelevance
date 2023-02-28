@@ -5,7 +5,7 @@ trigger TriggerAccount on Account (after insert,after update) {
         
         if(acc.AnnualIncomeDate__c != null){
             
-            if(acc.AnnualIncomeDate__c > Date.today() || acc.AnnualIncomeDate__c < Date.today()){
+            if(acc.AnnualIncomeDate__c > Date.today()){
                 Opportunity oppCase1 = new Opportunity();
                 	oppCase1.AccountId=acc.id;
                     oppCase1.Name='OpportunityOrange';
